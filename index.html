@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Security Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body><div class="container"><div class="header">
+    <h1>Password Security Analyzer</h1>
+
+    <div class="menu">
+        <button id="menuBtn">⋮</button>
+
+        <div class="dropdown" id="dropdownMenu">
+
+            <button onclick="generatePassword()">
+                Password Suggester
+            </button>
+
+            <button onclick="openHistory()">
+                Password History 🔒
+            </button>
+
+            <button onclick="deleteHistory()">
+                Delete History 🔒
+            </button>
+
+            <button onclick="openAdminSettings()">
+                Admin Settings 🔒
+            </button>
+
+            <button onclick="toggleTheme()">
+                Dark / Light Mode
+            </button>
+
+            <button onclick="showAbout()">
+                About
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<div class="card">
+
+    <label>Password</label>
+
+    <div class="password-box">
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="Enter Password"
+        >
+
+        <button id="showBtn">
+            👁
+        </button>
+
+    </div>
+
+    <button
+        class="analyze-btn"
+        onclick="analyzePassword()"
+    >
+        Analyze Password
+    </button>
+
+    <div class="meter-container">
+        <div id="strengthMeter"></div>
+    </div>
+
+    <div id="strengthText">
+        Enter a password
+    </div>
+
+    <div id="analysisResult"></div>
+
+</div>
+
+</div><!-- Password History Modal --><div class="modal" id="historyModal"><div class="modal-content">
+
+    <h2>Password History</h2>
+
+    <input
+        type="password"
+        id="historyAdminPassword"
+        placeholder="Enter Admin Password"
+    >
+
+    <button onclick="verifyHistory()">
+        Access History
+    </button>
+
+    <div id="historyContent"></div>
+
+    <button onclick="closeHistory()">
+        Close
+    </button>
+
+</div>
+
+</div><!-- Admin Settings Modal --><div class="modal" id="adminModal"><div class="modal-content">
+
+    <h2>Admin Settings</h2>
+
+    <input
+        type="password"
+        id="currentAdmin"
+        placeholder="Current Admin Password"
+    >
+
+    <input
+        type="password"
+        id="newAdmin"
+        placeholder="New Admin Password"
+    >
+
+    <button onclick="changeAdminPassword()">
+        Update Password
+    </button>
+
+    <button onclick="closeAdmin()">
+        Close
+    </button>
+
+</div>
+
+</div><script src="script.js"></script></body>
+</html>
